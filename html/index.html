@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Vibes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome para íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Fuentes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #2c2c54;
+            color: #f1f1f1;
+        }
+
+        /* Sección superior */
+        .navbar-top {
+            background-color: #3b3a63;
+            padding: 10px 0;
+        }
+
+        .navbar-top .navbar-brand, .navbar-top .nav-link {
+            color: #f1f1f1 !important;
+        }
+
+        .navbar-top .navbar-brand:hover, .navbar-top .nav-link:hover {
+            color: #d5a6e0 !important;
+        }
+
+        /* Línea divisora entre las secciones */
+        .navbar-divider {
+            border-bottom: 1px solid #d5a6e0;
+        }
+
+        /* Navbar principal */
+        .navbar-main {
+            background-color: #4a4a7a; /* Color más claro para el navbar */
+            padding: 10px 0;
+        }
+
+        .navbar-main .navbar-nav {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .navbar-main .nav-link {
+            font-family: 'Playfair Display', serif;
+            color: #f1f1f1 !important;
+            margin-left: 20px; /* Ajustado para mejor espaciado en móvil */
+        }
+
+        .navbar-main .nav-link:hover {
+            color: #d5a6e0 !important;
+        }
+
+        /* Estilo del cuadro de búsqueda */
+        .form-control {
+            background-color: #5f5fa6; /* Color de fondo más claro */
+            color: white;
+            border: none;
+        }
+
+        .form-control:focus {
+            background-color: #8e8eb3; /* Color cuando se hace clic */
+            box-shadow: none;
+        }
+
+        /* Placeholder más claro */
+        .form-control::placeholder {
+            color: #d5a6e0;
+        }
+
+        .hero-section {
+            background: url('https://via.placeholder.com/1920x800.png?text=Esoterism+and+Tarot') center/cover no-repeat;
+            height: 80vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+        }
+
+        .card {
+            background-color: #3b3a63;
+            color: #f1f1f1;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .card-body h5 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .btn-custom {
+            background-color: #d5a6e0;
+            color: #fff;
+            border-radius: 20px;
+            padding: 10px 30px;
+        }
+
+        .btn-custom:hover {
+            background-color: #b77abf;
+        }
+
+        footer {
+            background-color: #3b3a63;
+            color: #f1f1f1;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #d5a6e0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 767px) {
+            .navbar-main .nav-link {
+                margin-left: 0;
+                font-size: 0.9rem;
+            }
+
+            .navbar-top .navbar-brand, .navbar-top .nav-link {
+                font-size: 1rem; /* Ajuste de tamaño de texto para dispositivos pequeños */
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem; /* Reducir tamaño de texto en móviles */
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .card-body h5 {
+                font-size: 1.2rem; /* Ajuste de tamaño para pantallas pequeñas */
+            }
+
+            /* Ajuste de columnas en dispositivos pequeños */
+            .col-md-4 {
+                flex: 0 0 100%; /* En pantallas pequeñas las tarjetas ocuparán todo el ancho */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mystic Vibes</a>
+
+            <!-- Carrito y Usuario -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="badge bg-danger">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Mi cuenta</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Línea divisora entre las secciones -->
+    <div class="navbar-divider"></div>
+
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#horoscopo">Horóscopo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#compatibilidad">Compatibilidad Zodiacal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tarot">Tarot Sí o No</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#numerologia">Numerología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cursos">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tienda">Tienda</a>
+                    </li>
+                </ul>
+
+                <!-- Buscador a la derecha -->
+                <form class="d-flex ms-auto">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-custom ms-2" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="text-center">
+            <h1>Descubre tu Destino</h1>
+            <p>Explora las artes místicas del Tarot, la astrología y mucho más</p>
+            <a href="#horoscopo" class="btn btn-custom">Comienza tu viaje</a>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container my-5">
+        <div class="row text-center">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Horóscopo</h5>
+                        <p class="card-text">Descubre lo que los astros tienen para ti hoy.</p>
+                        <a href="#horoscopo" class="btn btn-custom">Ver Horóscopo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Compatibilidad Zodiacal</h5>
+                        <p class="card-text">Calcula tu compatibilidad con tu pareja según los signos.</p>
+                        <a href="#compatibilidad" class="btn btn-custom">Ver Compatibilidad</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tarot Sí o No</h5>
+                        <p class="card-text">Obtén respuestas rápidas con una tirada de cartas.</p>
+                        <a href="#tarot" class="btn btn-custom">Tirar Cartas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Numerología</h5>
+                        <p class="card-text">Calcula tu número de la suerte y descubre su significado.</p>
+                        <a href="#numerologia" class="btn btn-custom">Ver Numerología</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cursos Esotéricos</h5>
+                        <p class="card-text">Aprende sobre tarot, fases lunares y más en nuestros cursos.</p>
+                        <a href="#cursos" class="btn btn-custom">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tienda Mística</h5>
+                        <p class="card-text">Compra productos esotéricos y herramientas espirituales.</p>
+                        <a href="#tienda" class="btn btn-custom">Ir a la Tienda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mystic Vibes | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
