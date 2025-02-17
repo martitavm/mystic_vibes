@@ -106,6 +106,7 @@ body {
 }
 
 .card {
+    display: block; /* Asegura que las tarjetas estén visibles por defecto */
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

@@ -12,247 +12,260 @@
         rel="stylesheet">
     <!--<link rel="stylesheet" href="../static/css/tienda.css">-->
     <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            background-color: #2c2c54;
-            color: #f1f1f1;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #2c2c54;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        .container {
-            flex: 1;
-        }
+.container {
+    flex: 1;
+    max-width: 1200px; /* Limitar el ancho máximo para evitar que se expanda demasiado */
+    margin-left: auto; /* Centrar el contenedor */
+    margin-right: auto; /* Centrar el contenedor */
+    padding-left: 20px; /* Agregar margen izquierdo */
+    padding-right: 20px; /* Agregar margen derecho */
+}
 
-        /* Sección superior */
-        .navbar-top {
-            background-color: #3b3a63;
-            padding: 10px 0;
-        }
-
-        .navbar-top .navbar-brand,
-        .navbar-top .nav-link {
-            color: #f1f1f1 !important;
-        }
-
-        .navbar-top .navbar-brand:hover,
-        .navbar-top .nav-link:hover {
-            color: #d5a6e0 !important;
-        }
-
-        /* Línea divisora entre las secciones */
-        .navbar-divider {
-            border-bottom: 1px solid #d5a6e0;
-        }
-
-        /* Navbar principal */
-        .navbar-main {
-            background-color: #4a4a7a;
-            padding: 10px 0;
-        }
-
-        .navbar-main .navbar-nav {
-            width: 100%;
-            justify-content: center;
-        }
-
-        .navbar-main .nav-link {
-            font-family: 'Playfair Display', serif;
-            color: #f1f1f1 !important;
-            margin-left: 20px;
-        }
-
-        img {
-            width: 200px;
-            height: 250px;
-        }
-
-        .navbar-main .nav-link:hover {
-            color: #d5a6e0 !important;
-        }
-
-        /* Estilo del cuadro de búsqueda */
-        .form-control {
-            background-color: #5f5fa6;
-            color: white;
-            border: none;
-        }
-
-        .form-control:focus {
-            background-color: #8e8eb3;
-            box-shadow: none;
-        }
-
-        .form-control::placeholder {
-            color: #d5a6e0;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 15px;
-        }
-
-        .product-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #333;
-        }
-
-        .card .product-price {
-            font-size: 1.8rem;
-            color: #5f5fa6 !important;
-            /* Usamos !important para asegurar la prioridad */
-        }
-
-        .product-description {
-            font-size: 1.1rem;
-            color: #3b3a63;
-        }
-
-        .card {
-            border: none;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            width: 350px;
-            /* Aumento de ancho de la tarjeta */
-            margin: 15px auto;
-            /* Centrado y espacio entre tarjetas */
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card-title {
-            color: #3b3a63;
-            /* Color negro para el título */
-        }
-
-        .card-text {
-            color: #000;
-            /* Color negro para la descripción */
-        }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    padding-left: 20px; /* Espacio extra a la izquierda */
+    padding-right: 20px; /* Espacio extra a la derecha */
+}
 
 
-        .btn-primary {
-            background-color: #d5a6e0;
-            border-color: #d5a6e0;
-            border-radius: 50px;
-            transition: background-color 0.3s;
-        }
+/* Sección superior */
+.navbar-top {
+    background-color: #3b3a63;
+    padding: 10px 0;
+}
 
-        .btn-primary:hover {
-            background-color: #d5a6e0;
-            border-color: #d5a6e0;
-        }
+.navbar-top .navbar-brand,
+.navbar-top .nav-link {
+    color: #f1f1f1 !important;
+}
 
-        .btn-custom {
-            background-color: #d5a6e0;
-            color: #fff;
-            border-radius: 20px;
-            padding: 10px 30px;
-        }
+.navbar-top .navbar-brand:hover,
+.navbar-top .nav-link:hover {
+    color: #d5a6e0 !important;
+}
 
-        .btn-custom:hover {
-            background-color: #b77abf;
-        }
+/* Línea divisora entre las secciones */
+.navbar-divider {
+    border-bottom: 1px solid #d5a6e0;
+}
 
-        footer {
-            background-color: #3b3a63;
-            color: #f1f1f1;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: auto;
-            width: 100%;
-        }
+/* Navbar principal */
+.navbar-main {
+    background-color: #4a4a7a;
+    padding: 10px 0;
+}
 
-        footer a {
-            color: #d5a6e0;
-            text-decoration: none;
-        }
+.navbar-main .navbar-nav {
+    width: 100%;
+    justify-content: center;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+.navbar-main .nav-link {
+    font-family: 'Playfair Display', serif;
+    color: #f1f1f1 !important;
+    margin-left: 20px;
+}
 
-        /* Estilos para el botón de grupo en la tienda */
-        .product-nav {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+.product-image {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según lo necesites */
+    object-fit: cover; /* Esto garantiza que las imágenes mantendrán su proporción sin distorsionarse */
+    border-radius: 15px; /* Redondea los bordes de la imagen para que coincidan con el diseño de la tarjeta */
+}
 
-        .btn-group .btn {
-            background-color: #5f5fa6;
-            border: 1px solid #8e8eb3;
-            color: white;
-        }
 
-        .btn-group .btn:hover {
-            background-color: #8e8eb3;
-            color: #f1f1f1;
-        }
+.navbar-main .nav-link:hover {
+    color: #d5a6e0 !important;
+}
 
-        /* Media Queries para Responsividad */
-        @media (max-width: 767px) {
-            .navbar-main .nav-link {
-                margin-left: 0;
-                font-size: 0.9rem;
-            }
+/* Estilo del cuadro de búsqueda */
+.form-control {
+    background-color: #5f5fa6;
+    color: white;
+    border: none;
+}
 
-            .navbar-top .navbar-brand,
-            .navbar-top .nav-link {
-                font-size: 1rem;
-            }
+.form-control:focus {
+    background-color: #8e8eb3;
+    box-shadow: none;
+}
 
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
+.form-control::placeholder {
+    color: #d5a6e0;
+}
 
-            .hero-section p {
-                font-size: 1rem;
-            }
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #333;
+}
 
-            .card {
-                width: 90%;
-                /* Las tarjetas ocupan más espacio en pantallas pequeñas */
-            }
+.card .product-price {
+    font-size: 1.8rem;
+    color: #5f5fa6 !important;
+    /* Usamos !important para asegurar la prioridad */
+}
 
-            .card-body h5 {
-                font-size: 1.2rem;
-            }
+.product-description {
+    font-size: 1.1rem;
+    color: #3b3a63;
+}
 
-            .col-md-4 {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-        }
+.card {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 350px;
+    /* Aumento de ancho de la tarjeta */
+    margin: 10px;
+    /* Espacio entre tarjetas */
+}
 
-        @media (min-width: 768px) {
-            .card {
-                width: 350px;
-                /* Aumento de ancho para pantallas medianas */
-            }
-        }
+.card:hover {
+    transform: translateY(-10px);
+}
 
-        @media (min-width: 992px) {
-            .card {
-                width: 350px;
-                /* Aumento de ancho para pantallas grandes */
-            }
-        }
+.card-title {
+    color: #3b3a63;
+    /* Color negro para el título */
+}
 
-        @media (min-width: 1200px) {
-            .card {
-                width: 350px;
-                /* Aumento de ancho para pantallas muy grandes */
-            }
-        }
+.card-text {
+    color: #000;
+    /* Color negro para la descripción */
+}
+
+.btn-primary {
+    background-color: #d5a6e0;
+    border-color: #d5a6e0;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #d5a6e0;
+    border-color: #d5a6e0;
+}
+
+.btn-custom {
+    background-color: #d5a6e0;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+.btn-custom:hover {
+    background-color: #b77abf;
+}
+
+footer {
+    background-color: #3b3a63;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer a {
+    color: #d5a6e0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el botón de grupo en la tienda */
+.product-nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.btn-group .btn {
+    background-color: #5f5fa6;
+    border: 1px solid #8e8eb3;
+    color: white;
+}
+
+.btn-group .btn:hover {
+    background-color: #8e8eb3;
+    color: #f1f1f1;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 767px) {
+    .navbar-main .nav-link {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .navbar-top .navbar-brand,
+    .navbar-top .nav-link {
+        font-size: 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .card {
+        width: 100%;
+        /* Las tarjetas ocupan más espacio en pantallas pequeñas */
+    }
+
+    .card-body h5 {
+        font-size: 1.2rem;
+    }
+
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 100%;
+        /* Aumento de ancho para pantallas medianas */
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 350px;
+        /* Aumento de ancho para pantallas grandes */
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: 350px;
+        /* Aumento de ancho para pantallas muy grandes */
+    }
+}
+
     </style>
 </head>
 
@@ -312,118 +325,190 @@
             </div>
         </div>
     </nav>
-
-    <!-- Barra de navegación de productos -->
-    <div class="container mt-4 text-center">
-        <div class="btn-group" role="group">
-            <a href="#tarot" class="btn btn-outline-light">Tarot</a>
-            <a href="#minerales" class="btn btn-outline-light">Minerales</a>
-            <a href="#joyas" class="btn btn-outline-light">Joyas</a>
-            <a href="#amuletos" class="btn btn-outline-light">Amuletos</a>
-            <a href="#velas" class="btn btn-outline-light">Velas y Aromaterapia</a>
-            <a href="#libros" class="btn btn-outline-light">Libros Esotéricos</a>
-        </div>
+    <!-- Botones de categoría -->
+    <div class="btn-group" role="group">
+        <a href="#" id="todos" class="btn btn-outline-light">Todos</a>
+        <a href="#" id="tarot" class="btn btn-outline-light">Tarot</a>
+        <a href="#" id="minerales" class="btn btn-outline-light">Minerales</a>
+        <a href="#" id="joyas" class="btn btn-outline-light">Joyas</a>
+        <a href="#" id="amuletos" class="btn btn-outline-light">Amuletos</a>
+        <a href="#" id="velas" class="btn btn-outline-light">Velas y Aromaterapia</a>
+        <a href="#" id="libros" class="btn btn-outline-light">Libros Esotéricos</a>
     </div>
 
-    <!-- Sección de Productos -->
-    <div class="container mt-5 pt-5 mb-5">
-        <h2 class="section-title">Productos Recomendados</h2>
 
-        <!-- Grid de Productos con card-deck -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-            <!-- Producto 1 -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://www.joyeriajade.com/28336-large_default/amuleto-triple-proteccion-plata.jpg"
-                        class="card-img-top" alt="Amuleto de Protección">
-                    <div class="card-body">
-                        <h5 class="card-title">Amuleto de Protección</h5>
-                        <p class="card-text">Amuleto especial para protección energética y bienestar.</p>
-                        <p class="product-price"><strong>15.99€</strong></p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://m.media-amazon.com/images/I/61CtOswHkiL._AC_UF894,1000_QL80_.jpg"
-                        class="card-img-top" alt="Vela de Aromaterapia">
-                    <div class="card-body">
-                        <h5 class="card-title">Vela de Aromaterapia</h5>
-                        <p class="card-text">Vela aromática que promueve la relajación y el equilibrio mental.</p>
-                        <p class="product-price"><strong>10.50€</strong></p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://ae01.alicdn.com/kf/Se3886ff8c13d4359a1a1ae614cbe1d8e1.jpg" class="card-img-top"
-                        alt="Cristal de Cuarzo">
-                    <div class="card-body">
-                        <h5 class="card-title">Cristal de Cuarzo</h5>
-                        <p class="card-text">Cristal natural con propiedades curativas y energéticas.</p>
-                        <p class="product-price"><strong>19.99€</strong></p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://www.sernatur.cl/wp-content/uploads/2021/06/Tarot.jpg" class="card-img-top"
-                        alt="Tarot Místico">
-                    <div class="card-body">
-                        <h5 class="card-title">Tarot Místico</h5>
-                        <p class="card-text">Juego de cartas tarot para realizar lecturas esotéricas.</p>
-                        <p class="product-price"><strong>22.99€</strong></p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://www.zodiac-signs.org/wp-content/uploads/2017/11/astrology-book.jpg"
-                        class="card-img-top" alt="Libro de Astrología">
-                    <div class="card-body">
-                        <h5 class="card-title">Libro de Astrología</h5>
-                        <p class="card-text">Un libro completo sobre los signos del zodiaco y cómo influyen en nuestras
-                            vidas.</p>
-                        <p class="product-price"><strong>14.99€</strong></p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 6 -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://www.ohmstore.com/media/wysiwyg/products/large/moonstone.jpg" class="card-img-top"
-                        alt="Anillo de Piedra Lunar">
-                    <div class="card-body">
-                        <h5 class="card-title">Anillo de Piedra Lunar</h5>
-                        <p class="card-text">Anillo esotérico con piedra lunar, ideal para la armonía y la paz interior.
-                        </p>
-                        <p class="product-price"><strong>29.99€</strong></p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                    </div>
-                </div>
+    <div class="row" id="product-list">
+        <div class="col-md-4 card" data-category="tarot">
+            <img src="https://www.hipermaterial.es/_imagenes_multi/juegos-y-regalos/baraja-fournier-tarot-espanol-78-10023386-imagen-00587-2-g.jpg" alt="Tarot de Marsella" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Tarot de Marsella</h5>
+                <p class="card-text">Un tarot tradicional con cartas llenas de sabiduría.</p>
+                <p class="product-price">$25.00</p>
             </div>
         </div>
+        
+        <div class="col-md-4 card" data-category="tarot">
+            <img src="https://ae01.alicdn.com/kf/Se3886ff8c13d4359a1a1ae614c7f9fa7d.png" alt="Tarot Egipcio" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Tarot Egipcio</h5>
+                <p class="card-text">Descubre los secretos del antiguo Egipto con este tarot.</p>
+                <p class="product-price">$28.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="tarot">
+            <img src="https://rubikcubestar.com/cdn/shop/products/cartas-tarot-angeles-profesional-manual-envio-gratis-D_NQ_NP_783236-MLC26902955631_022018-F_e0fffc7b-eada-47bd-8e54-673878f2139d_580x.jpg?v=1586628952" alt="Tarot de los Ángeles" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Tarot de los Ángeles</h5>
+                <p class="card-text">Conéctate con la energía angelical para obtener respuestas.</p>
+                <p class="product-price">$35.00</p>
+            </div>
+        </div>
+        
+        <!-- Producto Minerales -->
+        <div class="col-md-4 card" data-category="minerales">
+            <img src="https://vivescortadaimport.com/diccionario-minerales/minerales/amatista/amatista.jpg" alt="Amatista" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Amatista</h5>
+                <p class="card-text">Piedra de energía positiva y equilibrio.</p>
+                <p class="product-price">$30.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="minerales">
+            <img src="https://bauer.com.co/wp-content/uploads/2023/09/shutterstock_565815937-3000x2000.jpg" alt="Cuarzo Rosa" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Cuarzo Rosa</h5>
+                <p class="card-text">El cuarzo del amor y la armonía.</p>
+                <p class="product-price">$22.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="minerales">
+            <img src="https://i0.wp.com/geologyscience.com/wp-content/uploads/2024/04/African-Jade-6-jpg.webp?fit=2560%2C2560&ssl=1" alt="Jade" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Jade</h5>
+                <p class="card-text">La piedra de la prosperidad y la suerte.</p>
+                <p class="product-price">$40.00</p>
+            </div>
+        </div>
+        
+        <!-- Producto Joyas -->
+        <div class="col-md-4 card" data-category="joyas">
+            <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/120638317_01/w=800,h=800,fit=pad" alt="Collar de Cuarzo" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Collar de Cuarzo</h5>
+                <p class="card-text">Un collar de cuarzo que canaliza energías puras.</p>
+                <p class="product-price">$45.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="joyas">
+            <img src="path_to_image/pulsera_ambar.jpg" alt="Pulsera de Ámbar" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Pulsera de Ámbar</h5>
+                <p class="card-text">Pulsera energizante hecha de ámbar natural.</p>
+                <p class="product-price">$38.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="joyas">
+            <img src="path_to_image/anillo_plata_obsidiana.jpg" alt="Anillo de Plata y Obsidiana" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Anillo de Plata y Obsidiana</h5>
+                <p class="card-text">Un anillo con el poder de la obsidiana para protegerte.</p>
+                <p class="product-price">$50.00</p>
+            </div>
+        </div>
+        
+        <!-- Producto Amuletos -->
+        <div class="col-md-4 card" data-category="amuletos">
+            <img src="path_to_image/amuleto_proteccion.jpg" alt="Amuleto de Protección" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Amuleto de Protección</h5>
+                <p class="card-text">Protege tu energía con este amuleto especial.</p>
+                <p class="product-price">$20.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="amuletos">
+            <img src="path_to_image/amuleto_suerte.jpg" alt="Amuleto de Suerte" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Amuleto de Suerte</h5>
+                <p class="card-text">Un amuleto para atraer buena fortuna a tu vida.</p>
+                <p class="product-price">$15.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="amuletos">
+            <img src="path_to_image/amuleto_amor.jpg" alt="Amuleto del Amor" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Amuleto del Amor</h5>
+                <p class="card-text">Para atraer y fortalecer las relaciones amorosas.</p>
+                <p class="product-price">$18.00</p>
+            </div>
+        </div>
+        
+        <!-- Producto Velas -->
+        <div class="col-md-4 card" data-category="velas">
+            <img src="path_to_image/vela_lavanda.jpg" alt="Vela de Lavanda" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Vela de Lavanda</h5>
+                <p class="card-text">Vela aromática que calma y relaja tu mente.</p>
+                <p class="product-price">$18.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="velas">
+            <img src="path_to_image/vela_sandalo.jpg" alt="Vela de Sándalo" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Vela de Sándalo</h5>
+                <p class="card-text">Aroma profundo y reconfortante para la meditación.</p>
+                <p class="product-price">$22.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="velas">
+            <img src="path_to_image/vela_roja_amor.jpg" alt="Vela Roja de Amor" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Vela Roja de Amor</h5>
+                <p class="card-text">Vela diseñada para atraer amor y pasión.</p>
+                <p class="product-price">$20.00</p>
+            </div>
+        </div>
+        
+        <!-- Producto Libros -->
+        <div class="col-md-4 card" data-category="libros">
+            <img src="path_to_image/libro_tarot.jpg" alt="Libro de Tarot" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Libro de Tarot</h5>
+                <p class="card-text">Guía completa para aprender a leer tarot.</p>
+                <p class="product-price">$35.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="libros">
+            <img src="path_to_image/libro_numerologia.jpg" alt="El Poder de la Numerología" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">El Poder de la Numerología</h5>
+                <p class="card-text">Descubre cómo los números pueden influir en tu vida.</p>
+                <p class="product-price">$40.00</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 card" data-category="libros">
+            <img src="path_to_image/libro_magia.jpg" alt="Magia y Hechizos" class="product-image">
+            <div class="card-body">
+                <h5 class="card-title">Magia y Hechizos</h5>
+                <p class="card-text">Un manual de magia para iniciarse en el esoterismo.</p>
+                <p class="product-price">$30.00</p>
+            </div>
+        </div>
+        
     </div>
+
+
+    <br><br>
 
     <!-- Footer -->
     <footer>
@@ -432,6 +517,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/tienda.js"></script>
 </body>
 
 </html>
