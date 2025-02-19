@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Vibes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script src="../javascript/index.js"></script>
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mystic Vibes</a>
+
+            <!-- Carrito y Usuario -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="badge bg-danger">0</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i> <span id="userName">Mi cuenta</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="login.html" id="loginOption">Iniciar sesión</a></li>
+                        <li><a class="dropdown-item d-none" href="#" id="logoutOption">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Línea divisora entre las secciones -->
+    <div class="navbar-divider"></div>
+
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calcular_carta_astral.html">Horóscopo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="compatibilidad.html">Compatibilidad Zodiacal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tirada.html">Tarot Sí o No</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="numerologia.html">Numerología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tienda.html">Tienda</a>
+                    </li>
+                </ul>
+
+                <!-- Buscador a la derecha -->
+                <form class="d-flex ms-auto">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-custom ms-2" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+            <!-- Carrusel de Productos Populares -->
+            <div id="carouselProductos" class="carousel slide container my-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../static/imagenes/magic.webp" class="d-block w-100" alt="Producto 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Conecta con tu magia</h4>
+                            <a href="#productos" class="btn btn-primary">Explora</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.wallpapergap.com/cdn/24/35/moon-phases-start-to-finish-desktop-wallpaper-2000x1333.jpg" class="d-block w-100" alt="Producto 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Conoce los ciclos de la luna</h4>
+                            <a href="#productos" class="btn btn-primary">Explora</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.yanacocha.com.pe/wp-content/uploads/2024/05/cuarzos-y-piedras-1.jpeg" class="d-block w-100" alt="Producto 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Equilibra tus energías</h4>
+                            <a href="productos.html" class="btn btn-primary">Explora</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="text-center">
+            <h1>Descubre tu Destino</h1>
+            <p>Explora las artes místicas del Tarot, la astrología y mucho más</p>
+            <a href="#horoscopo" class="btn btn-custom">Comienza tu viaje</a>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container my-5">
+        <div class="row text-center">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://album.mediaset.es/eimg/2024/12/23/una-imagen-con-los-distintos-signos-del-zodiaco_8df3.jpg?w=1024" class="card-img-top" alt="Artículo 1" width="400"  height="200">
+                        <h5 class="card-title">Horóscopo</h5>
+                        <p class="card-text">Descubre lo que los astros tienen planeado para ti hoy.</p>
+                        <a href="#horoscopo" class="btn btn-custom">Ver Horóscopo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://imagenes.pronto.es/files/article_social/uploads/2023/02/09/63e4a6ab7f7ad.png" class="card-img-top" alt="Artículo 1" width="400"  height="200">
+                        <h5 class="card-title">Compatibilidad Zodiacal</h5>
+                        <p class="card-text">Calcula tu compatibilidad con tu pareja según los signos.</p>
+                        <a href="#compatibilidad" class="btn btn-custom">Ver Compatibilidad</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://content20.lecturas.com/medio/2023/12/11/tarot-la-rueda-de-la-fortuna_3123132b_231211190612_1280x720.jpg" class="card-img-top" alt="Artículo 1" width="400" height="200">
+                        <h5 class="card-title">Tarot Sí o No</h5>
+                        <p class="card-text">Obtén respuestas rápidas con una breve tirada de cartas.</p>
+                        <a href="#tarot" class="btn btn-custom">Tirar Cartas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://media.c5n.com/p/f18613d3e86765efdeeb131057ce178c/adjuntos/326/imagenes/000/214/0000214712/790x0/smart/numerologia.png" class="card-img-top" alt="Artículo 1" width="400" height="200">
+                        <h5 class="card-title">Numerología</h5>
+                        <p class="card-text">Calcula tu número de la suerte y descubre su significado.</p>
+                        <a href="#numerologia" class="btn btn-custom">Ver Numerología</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://st5.depositphotos.com/36741118/76654/i/450/depositphotos_766542294-stock-photo-rite-christmas-wicca-pagan-energy.jpg" class="card-img-top" alt="Artículo 1" width="400" height="200">
+                        <h5 class="card-title">Cursos Esotéricos</h5>
+                        <p class="card-text">Aprende sobre tarot, fases lunares y más en nuestros cursos.</p>
+                        <a href="#cursos" class="btn btn-custom">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://bucket.somosohlala.com.ar/s3fs-public/styles/internal_480/public/2022-12/cristales-principal.png.webp?itok=cIoqbDER" class="card-img-top" alt="Artículo 1" width="400" height="200">
+                        <h5 class="card-title">Tienda Mística</h5>
+                        <p class="card-text">Compra productos esotéricos y herramientas espirituales.</p>
+                        <a href="#tienda" class="btn btn-custom">Ir a la Tienda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mystic Vibes | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
