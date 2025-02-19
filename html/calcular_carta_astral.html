@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Vibes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/calcular_carta_astral.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mystic Vibes</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span
+                            class="badge bg-danger">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Mi cuenta</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="navbar-divider"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#horoscopo">Horóscopo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#compatibilidad">Compatibilidad Zodiacal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tarot">Tarot Sí o No</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#numerologia">Numerología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cursos">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tienda">Tienda</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex ms-auto">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-custom ms-2" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section id="carta-astral" class="container my-5">
+        <h1>Calculadora de Horóscopo</h1>
+
+        <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha-nacimiento" required>
+
+        <label for="hora-nacimiento">Hora de Nacimiento (HH:MM):</label>
+        <input type="time" id="hora-nacimiento" required>
+
+        <button onclick="calcularHoroscopo()">Calcular Horóscopo</button>
+
+        <div id="resultado"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mystic Vibes | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+    </footer>
+
+    <script>
+        function calcularHoroscopo() {
+            const fechaNacimiento = document.getElementById("fecha-nacimiento").value;
+            const horaNacimiento = document.getElementById("hora-nacimiento").value;
+
+            const signosSolares = {
+                "Aries": { inicio: "03-21", fin: "04-19" },
+                "Tauro": { inicio: "04-20", fin: "05-20" },
+                "Géminis": { inicio: "05-21", fin: "06-20" },
+                "Cáncer": { inicio: "06-21", fin: "07-22" },
+                "Leo": { inicio: "07-23", fin: "08-22" },
+                "Virgo": { inicio: "08-23", fin: "09-22" },
+                "Libra": { inicio: "09-23", fin: "10-22" },
+                "Escorpio": { inicio: "10-23", fin: "11-21" },
+                "Sagitario": { inicio: "11-22", fin: "12-21" },
+                "Capricornio": { inicio: "12-22", fin: "01-19" },
+                "Acuario": { inicio: "01-20", fin: "02-18" },
+                "Piscis": { inicio: "02-19", fin: "03-20" }
+            };
+
+            const fecha = new Date(fechaNacimiento);
+            const mes = fecha.getMonth() + 1;
+            const dia = fecha.getDate();
+
+            let signoSolar = "";
+
+            for (const signo in signosSolares) {
+                const { inicio, fin } = signosSolares[signo];
+                const [mesInicio, diaInicio] = inicio.split('-').map(num => parseInt(num));
+                const [mesFin, diaFin] = fin.split('-').map(num => parseInt(num));
+
+                if ((mes === mesInicio && dia >= diaInicio) || (mes === mesFin && dia <= diaFin)) {
+                    signoSolar = signo;
+                    break;
+                }
+            }
+
+            const signosLunares = ["Aries", "Tauro", "Géminis", "Cáncer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio", "Acuario", "Piscis"];
+            const signoLunar = signosLunares[Math.floor(Math.random() * 12)];
+
+            const signosAscendentes = {
+                "Aries": [6, 9],
+                "Tauro": [9, 12],
+                "Géminis": [12, 15],
+                "Cáncer": [15, 18],
+                "Leo": [18, 21],
+                "Virgo": [21, 24]
+            };
+
+            let signoAscendente = "";
+            const hora = parseInt(horaNacimiento.split(":")[0]);
+
+            for (const signo in signosAscendentes) {
+                const [horaInicio, horaFin] = signosAscendentes[signo];
+                if (hora >= horaInicio && hora < horaFin) {
+                    signoAscendente = signo;
+                    break;
+                }
+            }
+
+            document.getElementById("resultado").style.display = "block";
+            document.getElementById("resultado").innerHTML = `
+                <p><strong>Horóscopo Solar (Signo del Sol):</strong> ${signoSolar}</p>
+                <p><strong>Horóscopo Lunar (Signo de la Luna):</strong> ${signoLunar}</p>
+                <p><strong>Horóscopo Ascendente (Rising Sign):</strong> ${signoAscendente}</p>
+            `;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

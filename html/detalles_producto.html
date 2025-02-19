@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Vibes - Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/detalles_producto.css">
+
+</head>
+
+<body>
+
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mystic Vibes</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span id="cart-count"
+                            class="badge bg-danger">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Mi cuenta</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Línea divisora entre las secciones -->
+    <div class="navbar-divider"></div>
+
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#horoscopo">Horóscopo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#compatibilidad">Compatibilidad Zodiacal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tarot">Tarot Sí o No</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#numerologia">Numerología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cursos">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tienda">Tienda</a>
+                    </li>
+                </ul>
+
+                <!-- Buscador a la derecha -->
+                <form class="d-flex ms-auto">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-custom ms-2" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="product-details">
+            <img id="imagen" src="" alt="Imagen del producto" class="product-image">
+            <div class="product-info">
+                <h1 id="titulo"></h1>
+                <p id="descripcion"></p>
+                <h3 id="precio"></h3>
+
+                <div class="quantity-selector">
+                    <button class="btn btn-light" onclick="decreaseQuantity()">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button class="btn btn-light" onclick="increaseQuantity()">+</button>
+                </div>
+
+                <button class="btn btn-custom mt-3" onclick="addToCart()">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <a href="tienda.html" class="btn btn-custom mt-3 d-block text-center">Volver a la tienda</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Mystic Vibes - Todos los derechos reservados. | <a href="#">Términos y Condiciones</a> | <a
+                href="#">Política de privacidad</a></p>
+    </footer>
+
+    <script>
+        // Base de datos de productos
+        const productos = {
+            "tarot_marsella": {
+                "titulo": "Tarot de Marsella",
+                "descripcion": "Un tarot tradicional con cartas llenas de sabiduría.",
+                "precio": "$25.00",
+                "imagen": "https://www.hipermaterial.es/_imagenes_multi/juegos-y-regalos/baraja-fournier-tarot-espanol-78-10023386-imagen-00587-2-g.jpg"
+            },
+            "tarot_egipcio": {
+                "titulo": "Tarot Egipcio",
+                "descripcion": "Descubre los secretos del antiguo Egipto con este tarot.",
+                "precio": "$28.00",
+                "imagen": "https://ae01.alicdn.com/kf/Se3886ff8c13d4359a1a1ae614c7f9fa7d.png"
+            },
+            "amatista": {
+                "titulo": "Amatista",
+                "descripcion": "Piedra de energía positiva y equilibrio.",
+                "precio": "$30.00",
+                "imagen": "https://vivescortadaimport.com/diccionario-minerales/minerales/amatista/amatista.jpg"
+            }
+        };
+
+        function cargarProducto() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productoID = urlParams.get('producto');
+
+            if (productoID && productos[productoID]) {
+                const producto = productos[productoID];
+
+                document.getElementById("titulo").innerText = producto.titulo;
+                document.getElementById("descripcion").innerText = producto.descripcion;
+                document.getElementById("precio").innerText = producto.precio;
+                document.getElementById("imagen").src = producto.imagen;
+            } else {
+                document.getElementById("titulo").innerText = "Producto no encontrado";
+                document.getElementById("descripcion").innerText = "";
+                document.getElementById("precio").innerText = "";
+                document.getElementById("imagen").style.display = "none";
+            }
+
+            actualizarCarrito();
+        }
+
+        function increaseQuantity() {
+            let quantity = document.getElementById('quantity');
+            quantity.value = parseInt(quantity.value) + 1;
+        }
+
+        function decreaseQuantity() {
+            let quantity = document.getElementById('quantity');
+            if (quantity.value > 1) {
+                quantity.value = parseInt(quantity.value) - 1;
+            }
+        }
+
+        function addToCart() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productoID = urlParams.get('producto');
+            let quantity = parseInt(document.getElementById('quantity').value);
+
+            if (!productoID || !productos[productoID]) return;
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let productoEnCarrito = carrito.find(item => item.id === productoID);
+
+            if (productoEnCarrito) {
+                productoEnCarrito.cantidad += quantity;
+            } else {
+                carrito.push({ id: productoID, cantidad: quantity });
+            }
+
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarCarrito();
+
+            alert(`Se añadieron ${quantity} unidades de ${productos[productoID].titulo} al carrito.`);
+        }
+
+        function actualizarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+            document.getElementById('cart-count').innerText = totalCantidad;
+        }
+
+        window.onload = cargarProducto;
+    </script>
+
+</body>
+
+</html>
