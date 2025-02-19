@@ -1,0 +1,142 @@
+/* Estilos generales */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-image: url('../imagenes/divination.jpg');
+    background-color: #2c2c54;
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    color: #f1f1f1;
+}
+
+h2{
+    font-size: 3.5rem;
+}
+
+/* Sección superior */
+.navbar-top {
+    background-color: #3b3a63;
+    padding: 10px 0;
+}
+
+.navbar-top .navbar-brand, .navbar-top .nav-link {
+    color: #f1f1f1 !important;
+}
+
+.navbar-top .navbar-brand:hover, .navbar-top .nav-link:hover {
+    color: #d5a6e0 !important;
+}
+
+/* Línea divisora entre las secciones */
+.navbar-divider {
+    border-bottom: 1px solid #d5a6e0;
+}
+
+/* Navbar principal */
+.navbar-main {
+    background-color: #4a4a7a;
+    padding: 10px 0;
+}
+
+.navbar-main .navbar-nav {
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar-main .nav-link {
+    font-family: 'Playfair Display', serif;
+    color: #f1f1f1 !important;
+    margin-left: 20px;
+}
+
+.navbar-main .nav-link:hover {
+    color: #d5a6e0 !important;
+}
+
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Input para la pregunta */
+#question {
+    font-size: 1.3rem;
+    background-color: #5f5fa6;
+    color: white;
+    border: none;
+}
+
+#question:focus {
+    background-color: #8e8eb3;
+    font-weight: bold;
+}
+
+/* Botón */
+.btn-custom {
+    background-color: #d5a6e0;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-custom:hover {
+    background-color: #b77abf;
+}
+
+/* Contenedor de cartas */
+.tarot-card {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Respuesta */
+.answer-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d5a6e0;
+}
+
+/* Espaciado de las cartas */
+.row {
+    justify-content: center;
+}
+
+/* Estilo de la respuesta */
+#answer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3b3a63;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+/* Estilo para los enlaces dentro del footer */
+footer a {
+    color: #d5a6e0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline; 
+}
+

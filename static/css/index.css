@@ -1,0 +1,184 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #2c2c54;
+    color: #f1f1f1;
+}
+
+/* Sección superior */
+.navbar-top {
+    background-color: #3b3a63;
+    padding: 10px 0;
+}
+
+.navbar-top .navbar-brand, .navbar-top .nav-link {
+    color: #f1f1f1 !important;
+}
+
+.navbar-top .navbar-brand:hover, .navbar-top .nav-link:hover {
+    color: #d5a6e0 !important;
+}
+
+/* Línea divisora entre las secciones */
+.navbar-divider {
+    border-bottom: 1px solid #d5a6e0;
+}
+
+/* Navbar principal */
+.navbar-main {
+    background-color: #4a4a7a;
+    padding: 10px 0;
+}
+
+.navbar-main .navbar-nav {
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar-main .nav-link {
+    font-family: 'Playfair Display', serif;
+    color: #f1f1f1 !important;
+    margin-left: 20px;
+}
+
+.navbar-main .nav-link:hover {
+    color: #d5a6e0 !important;
+}
+
+
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-caption h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 1.8rem;
+}
+
+.carousel-caption .btn {
+    font-family: 'Playfair Display', serif;
+    background-color: #d5a6e0;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.carousel-caption .btn:hover {
+    background-color: #b77abf;
+}
+
+/* Estilo del cuadro de búsqueda */
+.form-control {
+    background-color: #5f5fa6;
+    color: white;
+    border: none;
+}
+
+.form-control:focus {
+    background-color: #8e8eb3;
+    box-shadow: none;
+}
+
+/* Placeholder más claro */
+.form-control::placeholder {
+    color: #d5a6e0;
+}
+
+.hero-section {
+    background: url('https://via.placeholder.com/1920x800.png?text=Esoterism+and+Tarot') center/cover no-repeat;
+    height: 80vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    margin-top: -250px;
+    margin-bottom: -250px;
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+}
+
+.card {
+    background-color: #3b3a63;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 10px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-body h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.btn-custom {
+    background-color: #d5a6e0;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+.btn-custom:hover {
+    background-color: #b77abf;
+}
+
+footer {
+    background-color: #3b3a63;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #d5a6e0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 767px) {
+    .navbar-main .nav-link {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .navbar-top .navbar-brand, .navbar-top .nav-link {
+        font-size: 1rem; /* Ajuste de tamaño de texto para dispositivos pequeños */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem; /* Reducir tamaño de texto en móviles */
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .card-body h5 {
+        font-size: 1.2rem; /* Ajuste de tamaño para pantallas pequeñas */
+    }
+
+    /* Ajuste de columnas en dispositivos pequeños */
+    .col-md-4 {
+        flex: 0 0 100%; /* En pantallas pequeñas las tarjetas ocuparán todo el ancho */
+        max-width: 100%;
+    }
+}
