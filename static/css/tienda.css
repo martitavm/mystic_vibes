@@ -111,7 +111,7 @@ body {
 
 .card .product-price {
     font-size: 1.8rem;
-    color: #5f5fa6 !important;
+    color: #d5a6e0 !important;
     /* Usamos !important para asegurar la prioridad */
 }
 
@@ -121,6 +121,7 @@ body {
 }
 
 .card {
+    background-color: #3b3a63;
     border: none;
     border-radius: 15px;
     padding: 20px;
@@ -138,13 +139,13 @@ body {
 }
 
 .card-title {
-    color: #3b3a63;
-    /* Color negro para el título */
+    color: #ffffff;
+    /* Color blanco para el título */
 }
 
 .card-text {
-    color: #000;
-    /* Color negro para la descripción */
+    color: #ffffff;
+    /* Color blanco para la descripción */
 }
 
 .btn-primary {
@@ -208,11 +209,11 @@ footer a:hover {
 
 .card-title a {
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
 }
 
 .card-title a:hover {
-    color: #3b3a63;
+    color: #000000;
 }
 
 /* Media Queries para Responsividad */
