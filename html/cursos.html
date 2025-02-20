@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/cursos.css">
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>Mystic Vibes - Cursos</title>
+</head>
+
+<body>
+
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mystic Vibes</a>
+
+            <!-- Carrito y Usuario -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span
+                            class="badge bg-danger">0</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fas fa-user-circle"></i> <span id="userName">Mi cuenta</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="login.html" id="loginOption">Iniciar sesión</a></li>
+                        <li><a class="dropdown-item d-none" href="#" id="logoutOption">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Línea divisora entre las secciones -->
+    <div class="navbar-divider"></div>
+
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calcular_carta_astral.html">Horóscopo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="compatibilidad.html">Compatibilidad Zodiacal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tirada.html">Tarot Sí o No</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="numerologia.html">Numerología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tienda.html">Tienda</a>
+                    </li>
+                </ul>
+
+                <!-- Buscador a la derecha -->
+                <form class="d-flex ms-auto">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-custom ms-2" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor con los cursos -->
+    <section id="cursos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Cursos</h2>
+            <div class="row">
+                <!-- Curso lectura de manos -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <img src="https://gcdn.emol.cl/esoterismo/files/2015/12/quiromancia-1.jpg" class="card-img-top rounded" alt="Proyecto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Quiromancia</h5>
+                            <p class="card-text">Aprenda a leer las lineas de las manos, que secretos esconden y mucho más.</p>
+                            <a href="https://es.wikipedia.org/wiki/Quiromancia" class="btn btn-primary" target="_blank">Apuntate aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Curso lectura de cartas -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <img src="https://www.clarin.com/img/2023/01/11/FB5yq5-Dw_2000x1500__1.jpg" class="card-img-top rounded" alt="Proyecto 2" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Tarot</h5>
+                            <p class="card-text">Aprenda a interpretar las cartas del tarot y que puedes descubrir con ellas.</p>
+                            <a href="https://es.wikipedia.org/wiki/Tarot_(adivinación)" class="btn btn-primary"
+                                target="_blank">Apuntate aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Curso de reiki -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <img src="https://www.hunterdonhealth.org/sites/default/files/styles/large/public/2022-09/Reiki-Healing.jpeg?itok=PjcWqVsx" class="card-img-top rounded" alt="Proyecto 3" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Reiki</h5>
+                            <p class="card-text">¿Sabías qué las manos pueden curar el cuerpo? Aprenda como hacerlo este curso</p>
+                            <a href="https://es.wikipedia.org/wiki/Reiki" class="btn btn-primary"
+                            target="_blank">Apuntate aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Curso de limpieza espiritual -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <img src="https://www.clarin.com/img/2022/06/20/GD-AjSbM7_2000x1500__1.jpg" class="card-img-top rounded" alt="Proyecto 4" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Limpieza espiritual</h5>
+                            <p class="card-text">En este curso aprenderás el uso de los inciensos y como equilibrar tu energía interior.</p>
+                            <a href="https://es.wikipedia.org/wiki/Terapia_de_energía" class="btn btn-primary"
+                            target="_blank">Apuntate aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Curso de pendulo -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <img src="https://estaticos-cdn.prensaiberica.es/clip/e3937a53-d4f0-4ea5-ad9a-6090dc998ae6_16-9-discover-aspect-ratio_default_0.jpg" class="card-img-top rounded" alt="Proyecto 5" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Péndulo</h5>
+                            <p class="card-text">Aprenda a interpretar y usar el péndulo para obtener respuestas a preguntas sencillas.</p>
+                            <a href="https://yogacentercordoba.com/limpieza-energetica-con-el-pendulo/" class="btn btn-primary"
+                            target="_blank">Apuntate aquí</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Curso de chakras -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <img src="https://www.retiroswellness.com/wp-content/uploads/2022/07/LOS-7-CHAKRAS.png" class="card-img-top rounded" alt="Proyecto 6" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Chakras</h5>
+                            <p class="card-text">Aprenda todo sobre los chakras del cuerpo, su significado y como usarlos a tu favor.</p>
+                            <a href="https://es.wikipedia.org/wiki/Chakra" class="btn btn-primary"
+                            target="_blank">Apuntate aquí</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mystic Vibes | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+    </footer>
+</body>
+
+</html>
