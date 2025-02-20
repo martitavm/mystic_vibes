@@ -127,6 +127,10 @@ body {
     background-color: #b77abf;
 }
 
+#resultado{
+    background-color: rgb(44, 44, 84, 0.7);
+}
+
 footer {
     background-color: #3b3a63;
     color: #f1f1f1;

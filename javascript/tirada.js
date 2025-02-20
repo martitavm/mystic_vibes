@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Listado de cartas que significan "SÍ" y "NO"
     let tarotDeckYes = ["El_Carro", "El_Sol", "La_Estrella", "La_Fuerza", "La_Muerte"];
     let tarotDeckNo = ["El_Colgado", "El_Diablo", "La_Luna", "La_Torre", "El_Mundo"];
+    let tarotDeck = tarotDeckYes.concat(tarotDeckNo); // Mazo completo
 
     // Capturamos los elementos de la página que vamos a usar
     let btn = document.getElementById("getAnswer"); // Botón para hacer la tirada
@@ -9,26 +10,33 @@ document.addEventListener("DOMContentLoaded", function () {
     let card2 = document.getElementById("card2"); // Segunda carta
     let card3 = document.getElementById("card3"); // Tercera carta
     let answer = document.getElementById("answer"); // Lugar donde aparecerá la respuesta
-    let questionInput = document.getElementById("question"); // El campo donde el usuario escribe su pregunta
+    let questionInput = document.getElementById("question"); // Campo de texto para la pregunta
 
-    let lastQuestion = ""; // Aquí vamos a guardar la última pregunta para compararla después
+    let lastQuestion = ""; // Variable para guardar la última pregunta
 
     btn.addEventListener("click", function () {
-        // Si la pregunta está vacía o es la misma que la última vez, avisamos al usuario y salimos
-        if (questionInput.value.trim() === "" || questionInput.value.trim() === lastQuestion) {
+        let question = questionInput.value.trim(); // Obtener la pregunta y eliminar espacios
+
+        // Si el campo está vacío, mostramos el mensaje y detenemos la ejecución
+        if (question === "") {
+            alert("Introduce una pregunta");
+            return;
+        }
+
+        // Si la pregunta es la misma que la última, avisamos y detenemos la ejecución
+        if (question === lastQuestion) {
             alert("Por favor, cambia tu pregunta antes de realizar otra tirada.");
-            return; // No seguimos con el código, evitamos que se haga la tirada
+            return;
         }
 
         // Guardamos la nueva pregunta como la última que hizo el usuario
-        lastQuestion = questionInput.value.trim();
+        lastQuestion = question;
 
-        // Elegimos tres cartas al azar del mazo
-        let card1Name = randomCard(tarotDeckYes.concat(tarotDeckNo));
-        let card2Name = randomCard(tarotDeckYes.concat(tarotDeckNo));
-        let card3Name = randomCard(tarotDeckYes.concat(tarotDeckNo));
+        // Seleccionamos tres cartas únicas sin repetir
+        let selectedCards = getUniqueCards(tarotDeck, 3);
+        let [card1Name, card2Name, card3Name] = selectedCards;
 
-        // Cambiamos la imagen de las cartas según lo que salió
+        // Cambiamos las imágenes de las cartas según lo que salió
         card1.src = `../static/imagenes/tarot/${card1Name}.jpg`;
         card2.src = `../static/imagenes/tarot/${card2Name}.jpg`;
         card3.src = `../static/imagenes/tarot/${card3Name}.jpg`;
@@ -39,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
         card3.style.display = "inline";
 
         // Contamos cuántas cartas son "SÍ" y cuántas son "NO"
-        let yesCount = [card1Name, card2Name, card3Name].filter(card => tarotDeckYes.includes(card)).length;
-        let noCount = [card1Name, card2Name, card3Name].filter(card => tarotDeckNo.includes(card)).length;
+        let yesCount = selectedCards.filter(card => tarotDeckYes.includes(card)).length;
+        let noCount = selectedCards.filter(card => tarotDeckNo.includes(card)).length;
 
-        // Dependiendo de cuántas cartas salieron de cada tipo, damos la respuesta
+        // Determinamos la respuesta final
         if (yesCount > noCount) {
             answer.textContent = "La respuesta es: SÍ";
         } else if (noCount > yesCount) {
@@ -52,9 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Función para elegir una carta aleatoria
-    function randomCard(deck) {
-        return deck[Math.floor(Math.random() * deck.length)];
+    // Función para obtener un número determinado de cartas únicas
+    function getUniqueCards(deck, count) {
+        let shuffled = deck.sort(() => 0.5 - Math.random()); // Barajamos las cartas
+        return shuffled.slice(0, count); // Tomamos las primeras 'count' cartas sin repetir
     }
 
     // Cuando la página se recarga, limpiamos la pregunta y la última pregunta guardada
@@ -63,8 +72,3 @@ document.addEventListener("DOMContentLoaded", function () {
         lastQuestion = ''; // También borramos la pregunta guardada
     }
 });
-
-
-
-
-

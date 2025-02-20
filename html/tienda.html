@@ -16,24 +16,29 @@
 <body>
 
     <!-- Barra superior -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Mystic Vibes</a>
 
             <!-- Carrito y Usuario -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span
-                            class="badge bg-danger">0</span></a>
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="badge bg-danger">0</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Mi cuenta</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i> <span id="userName">Mi cuenta</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="login.html" id="loginOption">Iniciar sesión</a></li>
+                        <li><a class="dropdown-item d-none" href="#" id="logoutOption">Cerrar sesión</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Línea divisora -->
+    <!-- Línea divisora entre las secciones -->
     <div class="navbar-divider"></div>
 
     <!-- Barra de navegación principal -->
@@ -42,19 +47,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="calcular_carta_astral.html">Horóscopo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#compatibilidad">Compatibilidad Zodiacal</a>
+                        <a class="nav-link" href="compatibilidad.html">Compatibilidad Zodiacal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#tarot">Tarot Sí o No</a>
+                        <a class="nav-link" href="tirada.html">Tarot Sí o No</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#numerologia">Numerología</a>
+                        <a class="nav-link" href="numerologia.html">Numerología</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cursos">Cursos</a>
+                        <a class="nav-link" href="cursos.html">Cursos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tienda.html">Tienda</a>
@@ -289,6 +297,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../javascript/tienda.js"></script>
+    <script src="../javascript/index.js"></script>
 </body>
 
 </html>
