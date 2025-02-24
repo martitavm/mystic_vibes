@@ -23,30 +23,37 @@ const descripciones = {
 };
 
 function calcular_numero() {
+    // Variables para calcular el número y div del dom para insertar el resultado
     let resultadoDiv = document.getElementById("resultado");
     let fecha_num = obtener_num_fecha();
     let suma = sumar_numeros(fecha_num);
 
-    
+    // Mientras la suma sea mayor a 10 sigo sumando los números uno por uno
     while (suma >= 10) {
+        // Si el número entra dentro de los numeros maestros, se termina la función
         if (numeros_maestros.includes(suma)) {
             resultadoDiv.innerHTML = `Tu número es el ${suma}<br>${descripciones[suma]}`;
             return;
         }
+        // Llamo a la función sumar numeros para sumar cada numero por separado
         suma = sumar_numeros(suma);
     }
 
+    // Muestro el resultado en el div
     resultadoDiv.innerHTML = `Tu número es el ${suma}<br>${descripciones[suma]}`;
 }
 
+// Función para obtener la fecha del datepicker
 function obtener_num_fecha() {
     return document.getElementById("fecha").value.replaceAll("-", ""); 
 }
 
+// Función que suma los numeros de la fecha uno por uno
 function sumar_numeros(numeros) {
     let suma = 0;
     let numStr = String(numeros);
 
+    // Bucle que recorre cada numero de la fecha para sumarlo al siguiente
     for (let i = 0; i < numStr.length; i++) {
         suma += Number(numStr[i]);
     }
