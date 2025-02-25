@@ -56,7 +56,7 @@ body {
     color: #d5a6e0;
 }
 
-
+/* Contenedor principal */
 .container {
     flex: 1;
     max-width: 1200px;
@@ -64,6 +64,7 @@ body {
     padding: 20px;
 }
 
+/* Detalles del producto */
 .product-details {
     display: flex;
     flex-wrap: wrap;
@@ -72,16 +73,19 @@ body {
     margin-top: 20px;
 }
 
+/* Imagen del producto */
 .product-image {
     width: 100%;
     max-width: 400px;
     border-radius: 15px;
 }
 
+/* Información del producto */
 .product-info {
     max-width: 500px;
 }
 
+/* Botón personalizado */
 .btn-custom {
     background-color: #d5a6e0;
     color: #fff;
@@ -90,16 +94,19 @@ body {
     font-size: 1.1rem;
 }
 
+/* Hover del botón personalizado */
 .btn-custom:hover {
     background-color: #b98ac4;
 }
 
+/* Selector de cantidad */
 .quantity-selector {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+/* Estilo del input en el selector de cantidad */
 .quantity-selector input {
     width: 50px;
     text-align: center;
@@ -111,6 +118,7 @@ body {
     color: white;
 }
 
+/* Botón personalizado (ajustes adicionales) */
 .btn-custom {
     padding: 10px 20px;
     font-size: 1rem;
@@ -119,12 +127,15 @@ body {
     max-width: 200px;
 }
 
+/* Hover del botón personalizado (con escala) */
 .btn-custom:hover {
     background-color: #b98ac4;
     transform: scale(1.05);
 }
 
 
+
+/* Estilos del pie de página */
 .footer {
     background-color: #3b3a63;
     color: #f1f1f1;
@@ -133,12 +144,15 @@ body {
     margin-top: auto;
     width: 100%;
 }
-.footer a{
-    color:#d5a6e0;
+
+/* Enlace dentro del pie de página */
+.footer a {
+    color: #d5a6e0;
 }
 
-
+/* Estilos para dispositivos con pantallas pequeñas (menos de 768px) */
 @media (max-width: 768px) {
+    /* Cambio en la disposición de los detalles del producto */
     .product-details {
         flex-direction: column;
         align-items: center;
