@@ -4,197 +4,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystic Vibes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Inclusión de archivos externos para estilos y fuentes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Incluimos la hoja de estilo de Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Incluimos los íconos de Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet"> <!-- Incluimos las fuentes de Google Fonts -->
     <link rel="stylesheet" href="../static/css/index.css">
-    <script src="../javascript/index.js"></script>
+    <script src="../javascript/index.js"></script> 
 </head>
 <body>
 
-    <!-- Barra superior -->
+    <!-- Barra superior de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Mystic Vibes</a>
+            <!-- Logo y nombre del sitio -->
+            <a class="navbar-brand" href="#">Mystic Vibes</a> <!-- Enlace al inicio de la página con el nombre de la web -->
 
-            <!-- Carrito y Usuario -->
+            <!-- Menú de usuario y carrito -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="badge bg-danger">0</span></a>
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="badge bg-danger">0</span></a> <!-- Enlace del carrito de compras con un ícono y el número de artículos (0 por defecto) -->
                 </li>
                 <li class="nav-item dropdown">
+                    <!-- Menú desplegable para la cuenta de usuario -->
                     <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-circle"></i> <span id="userName">Mi cuenta</span>
+                        <i class="fas fa-user-circle"></i> <span id="userName">Mi cuenta</span> <!-- Enlace que muestra el ícono de usuario y el texto "Mi cuenta" -->
                     </a>
+                    <!-- Opciones de inicio y cierre de sesión -->
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
-                        <li><a class="dropdown-item" href="login.html" id="loginOption">Iniciar sesión</a></li>
-                        <li><a class="dropdown-item d-none" href="#" id="logoutOption">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="login.html" id="loginOption">Iniciar sesión</a></li> <!-- Opción para iniciar sesión -->
+                        <li><a class="dropdown-item d-none" href="#" id="logoutOption">Cerrar sesión</a></li> <!-- Opción para cerrar sesión (oculta por defecto) -->
                     </ul>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Línea divisora entre las secciones -->
+    <!-- Línea divisora entre la barra superior y la barra de navegación principal -->
     <div class="navbar-divider"></div>
 
     <!-- Barra de navegación principal -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
         <div class="container-fluid">
+            <!-- Menú de navegación con enlaces a diferentes secciones -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html">Inicio</a> <!-- Enlace a la página principal -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="calcular_carta_astral.html">Horóscopo</a>
+                        <a class="nav-link" href="calcular_carta_astral.html">Horóscopo</a> <!-- Enlace al horóscopo -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="compatibilidad.html">Compatibilidad Zodiacal</a>
+                        <a class="nav-link" href="compatibilidad.html">Compatibilidad Zodiacal</a> <!-- Enlace a la página de compatibilidad zodiacal -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tirada.html">Tarot Sí o No</a>
+                        <a class="nav-link" href="tirada.html">Tarot Sí o No</a> <!-- Enlace a la página de tarot -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="numerologia.html">Numerología</a>
+                        <a class="nav-link" href="numerologia.html">Numerología</a> <!-- Enlace a la página de numerología -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cursos.html">Cursos</a>
+                        <a class="nav-link" href="cursos.html">Cursos</a> <!-- Enlace a la página de cursos -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tienda.html">Tienda</a>
+                        <a class="nav-link" href="tienda.html">Tienda</a> <!-- Enlace a la página de tienda -->
                     </li>
                 </ul>
 
-                <!-- Buscador a la derecha -->
+                <!-- Barra de búsqueda en la parte derecha -->
                 <form class="d-flex ms-auto">
-                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-custom ms-2" type="submit"><i class="fas fa-search"></i></button>
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar"> <!-- Campo de búsqueda -->
+                    <button class="btn btn-custom ms-2" type="submit"><i class="fas fa-search"></i></button> <!-- Botón de búsqueda -->
                 </form>
             </div>
         </div>
     </nav>
 
-            <!-- Carrusel de Productos Populares -->
-            <div id="carouselProductos" class="carousel slide container my-5" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../static/imagenes/magic.webp" class="d-block w-100" alt="Producto 1">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Conecta con tu magia</h4>
-                            <a href="cursos.html" class="btn btn-primary">Explora</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.wallpapergap.com/cdn/24/35/moon-phases-start-to-finish-desktop-wallpaper-2000x1333.jpg" class="d-block w-100" alt="Producto 2">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Conoce los ciclos de la luna</h4>
-                            <a href="cursos.html" class="btn btn-primary">Explora</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.yanacocha.com.pe/wp-content/uploads/2024/05/cuarzos-y-piedras-1.jpeg" class="d-block w-100" alt="Producto 3">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Equilibra tus energías</h4>
-                            <a href="tienda.html" class="btn btn-primary">Explora</a>
-                        </div>
-                    </div>
+    <!-- Carrusel de productos populares -->
+    <div id="carouselProductos" class="carousel slide container my-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Primer ítem del carrusel -->
+            <div class="carousel-item active">
+                <img src="../static/imagenes/magic.webp" class="d-block w-100" alt="Producto 1"> <!-- Imagen del primer producto -->
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>Conecta con tu magia</h4> <!-- Título que aparece sobre la imagen -->
+                    <a href="cursos.html" class="btn btn-primary">Explora</a> <!-- Botón de acción para explorar más -->
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
             </div>
+            <!-- Segundo ítem del carrusel -->
+            <div class="carousel-item">
+                <img src="https://www.wallpapergap.com/cdn/24/35/moon-phases-start-to-finish-desktop-wallpaper-2000x1333.jpg" class="d-block w-100" alt="Producto 2"> <!-- Imagen del segundo producto -->
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>Conoce los ciclos de la luna</h4> <!-- Título que aparece sobre la imagen -->
+                    <a href="cursos.html" class="btn btn-primary">Explora</a> <!-- Botón de acción -->
+                </div>
+            </div>
+            <!-- Tercer ítem del carrusel -->
+            <div class="carousel-item">
+                <img src="https://www.yanacocha.com.pe/wp-content/uploads/2024/05/cuarzos-y-piedras-1.jpeg" class="d-block w-100" alt="Producto 3"> <!-- Imagen del tercer producto -->
+                <div class="carousel-caption d-none d-md-block">
+                    <h4>Equilibra tus energías</h4> <!-- Título que aparece sobre la imagen -->
+                    <a href="tienda.html" class="btn btn-primary">Explora</a> <!-- Botón de acción -->
+                </div>
+            </div>
+        </div>
+        <!-- Controles para el carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span> <!-- Ícono de control para deslizar hacia el anterior -->
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span> <!-- Ícono de control para deslizar hacia el siguiente -->
+        </button>
+    </div>
 
-    <!-- Hero Section -->
+    <!-- Sección Hero -->
     <div class="hero-section">
         <div class="text-center">
-            <h1>Descubre tu Destino</h1>
-            <p>Explora las artes místicas del Tarot, la astrología y mucho más</p>
-            <a href="cursos.html" class="btn btn-custom">Comienza tu viaje</a>
+            <h1>Descubre tu Destino</h1> <!-- Título principal -->
+            <p>Explora las artes místicas del Tarot, la astrología y mucho más</p> <!-- Descripción breve -->
+            <a href="cursos.html" class="btn btn-custom">Comienza tu viaje</a> <!-- Botón para acceder a los cursos -->
         </div>
     </div>
 
-    <!-- Content Section -->
+    <!-- Sección de contenido con cards -->
     <div class="container my-5">
         <div class="row text-center">
+            <!-- Primer card -->
             <div class="col-12 col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <img src="https://album.mediaset.es/eimg/2024/12/23/una-imagen-con-los-distintos-signos-del-zodiaco_8df3.jpg?w=1024" class="card-img-top" alt="Artículo 1" width="400"  height="200">
-                        <h5 class="card-title">Horóscopo</h5>
-                        <p class="card-text">Descubre lo que los astros tienen planeado para ti hoy.</p>
-                        <a href="calcular_carta_astral.html" class="btn btn-custom">Ver Horóscopo</a>
+                        <img src="https://album.mediaset.es/eimg/2024/12/23/una-imagen-con-los-distintos-signos-del-zodiaco_8df3.jpg?w=1024" class="card-img-top" alt="Artículo 1" width="400" height="200"> <!-- Imagen de la card -->
+                        <h5 class="card-title">Horóscopo</h5> <!-- Título de la card -->
+                        <p class="card-text">Descubre lo que los astros tienen planeado para ti hoy.</p> <!-- Descripción corta -->
+                        <a href="calcular_carta_astral.html" class="btn btn-custom">Ver Horóscopo</a> <!-- Botón de acción -->
                     </div>
                 </div>
             </div>
+            <!-- Segundo card -->
             <div class="col-12 col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <img src="https://imagenes.pronto.es/files/article_social/uploads/2023/02/09/63e4a6ab7f7ad.png" class="card-img-top" alt="Artículo 1" width="400"  height="200">
-                        <h5 class="card-title">Compatibilidad Zodiacal</h5>
-                        <p class="card-text">Calcula tu compatibilidad con tu pareja según los signos.</p>
-                        <a href="compatibilidad.html" class="btn btn-custom">Ver Compatibilidad</a>
+                        <img src="https://imagenes.pronto.es/files/article_social/uploads/2023/02/09/63e4a6ab7f7ad.png" class="card-img-top" alt="Artículo 1" width="400" height="200"> <!-- Imagen de la card -->
+                        <h5 class="card-title">Compatibilidad Zodiacal</h5> <!-- Título de la card -->
+                        <p class="card-text">Calcula tu compatibilidad con tu pareja según los signos.</p> <!-- Descripción -->
+                        <a href="compatibilidad.html" class="btn btn-custom">Ver Compatibilidad</a> <!-- Botón -->
                     </div>
                 </div>
             </div>
+            <!-- Tercer card -->
             <div class="col-12 col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <img src="https://content20.lecturas.com/medio/2023/12/11/tarot-la-rueda-de-la-fortuna_3123132b_231211190612_1280x720.jpg" class="card-img-top" alt="Artículo 1" width="400" height="200">
-                        <h5 class="card-title">Tarot Sí o No</h5>
-                        <p class="card-text">Obtén respuestas rápidas con una breve tirada de cartas.</p>
-                        <a href="tirada.html" class="btn btn-custom">Tirar Cartas</a>
+                        <img src="https://content20.lecturas.com/medio/2023/12/11/tarot-la-rueda-de-la-fortuna_3123132b_231211190612_1280x720.jpg" class="card-img-top" alt="Artículo 1" width="400" height="200"> <!-- Imagen -->
+                        <h5 class="card-title">Tarot Sí o No</h5> <!-- Título -->
+                        <p class="card-text">Obtén respuestas rápidas con una breve tirada de cartas.</p> <!-- Descripción -->
+                        <a href="tirada.html" class="btn btn-custom">Tirar Cartas</a> <!-- Botón -->
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row text-center">
+            <!-- Cuarto card -->
             <div class="col-12 col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <img src="https://media.c5n.com/p/f18613d3e86765efdeeb131057ce178c/adjuntos/326/imagenes/000/214/0000214712/790x0/smart/numerologia.png" class="card-img-top" alt="Artículo 1" width="400" height="200">
-                        <h5 class="card-title">Numerología</h5>
-                        <p class="card-text">Calcula tu número de la suerte y descubre su significado.</p>
-                        <a href="numerologia.html" class="btn btn-custom">Ver Numerología</a>
+                        <img src="https://media.c5n.com/p/f18613d3e86765efdeeb131057ce178c/adjuntos/326/imagenes/000/214/0000214712/790x0/smart/numerologia.png" class="card-img-top" alt="Artículo 1" width="400" height="200"> <!-- Imagen -->
+                        <h5 class="card-title">Numerología</h5> <!-- Título -->
+                        <p class="card-text">Calcula tu número de la suerte y descubre su significado.</p> <!-- Descripción -->
+                        <a href="numerologia.html" class="btn btn-custom">Ver Numerología</a> <!-- Botón -->
                     </div>
                 </div>
             </div>
+            <!-- Quinto card -->
             <div class="col-12 col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <img src="https://st5.depositphotos.com/36741118/76654/i/450/depositphotos_766542294-stock-photo-rite-christmas-wicca-pagan-energy.jpg" class="card-img-top" alt="Artículo 1" width="400" height="200">
-                        <h5 class="card-title">Cursos Esotéricos</h5>
-                        <p class="card-text">Aprende sobre tarot, fases lunares y más en nuestros cursos.</p>
-                        <a href="cursos.html" class="btn btn-custom">Ver Cursos</a>
+                        <img src="https://st5.depositphotos.com/36741118/76654/i/450/depositphotos_766542294-stock-photo-rite-christmas-wicca-pagan-energy.jpg" class="card-img-top" alt="Artículo 1" width="400" height="200"> <!-- Imagen -->
+                        <h5 class="card-title">Cursos Esotéricos</h5> <!-- Título -->
+                        <p class="card-text">Aprende sobre tarot, fases lunares y más en nuestros cursos.</p> <!-- Descripción -->
+                        <a href="cursos.html" class="btn btn-custom">Ver Cursos</a> <!-- Botón -->
                     </div>
                 </div>
             </div>
+            <!-- Sexto card -->
             <div class="col-12 col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <img src="https://bucket.somosohlala.com.ar/s3fs-public/styles/internal_480/public/2022-12/cristales-principal.png.webp?itok=cIoqbDER" class="card-img-top" alt="Artículo 1" width="400" height="200">
-                        <h5 class="card-title">Tienda Mística</h5>
-                        <p class="card-text">Compra productos esotéricos y herramientas espirituales.</p>
-                        <a href="tienda.html" class="btn btn-custom">Ir a la Tienda</a>
+                        <img src="https://bucket.somosohlala.com.ar/s3fs-public/styles/internal_480/public/2022-12/cristales-principal.png.webp?itok=cIoqbDER" class="card-img-top" alt="Artículo 1" width="400" height="200"> <!-- Imagen -->
+                        <h5 class="card-title">Tienda Mística</h5> <!-- Título -->
+                        <p class="card-text">Compra productos esotéricos y herramientas espirituales.</p> <!-- Descripción -->
+                        <a href="tienda.html" class="btn btn-custom">Ir a la Tienda</a> <!-- Botón -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Pie de página con derechos de autor y enlaces -->
     <footer>
-        <p>&copy; 2025 Mystic Vibes | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+        <p>&copy; 2025 Mystic Vibes | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p> <!-- Enlaces de políticas y derechos -->
     </footer>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- Inclusión de JavaScript para funcionalidad de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> <!-- Popper.js para los componentes de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> <!-- Bootstrap JS -->
 </body>
 </html>
-
-
