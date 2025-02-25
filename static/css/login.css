@@ -9,7 +9,8 @@ body {
     align-items: center;
     height: 100vh;
 }
-.login-container {
+
+.contenedorInicioSesion {
     background-color: #3b3a63;
     padding: 40px;
     border-radius: 10px;
@@ -18,32 +19,39 @@ body {
     max-width: 400px;
     text-align: center;
 }
-.login-container h2 {
+
+.contenedorInicioSesion h2 {
     font-family: 'Playfair Display', serif;
     color: #d5a6e0;
 }
+
 .form-control {
     background-color: #5f5fa6;
     color: white;
     border: none;
 }
+
 .form-control:focus {
     background-color: #8e8eb3;
     box-shadow: none;
 }
-.btn-custom {
+
+.botonPersonalizado {
     background-color: #d5a6e0;
     color: #fff;
     border-radius: 20px;
     padding: 10px 30px;
 }
-.btn-custom:hover {
+
+.botonPersonalizado:hover {
     background-color: #b77abf;
 }
+
 a {
     color: #d5a6e0;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
