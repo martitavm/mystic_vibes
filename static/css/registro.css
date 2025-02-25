@@ -12,7 +12,7 @@ body {
 }
 
 /* Contenedor del formulario */
-.register-container {
+.contenedor-registro {
     background-color: #3b3a63;
     padding: 30px;
     border-radius: 10px;
@@ -23,7 +23,7 @@ body {
 }
 
 /* Título */
-.register-container h2 {
+.contenedor-registro h2 {
     font-family: 'Playfair Display', serif;
     color: #d5a6e0;
     margin-bottom: 20px;
@@ -47,7 +47,7 @@ body {
 }
 
 /* Botón de registro */
-.btn-custom {
+.btn-personalizado {
     background-color: #d5a6e0;
     color: #fff;
     border-radius: 20px;
@@ -56,22 +56,22 @@ body {
     font-weight: bold;
 }
 
-.btn-custom:hover {
+.btn-personalizado:hover {
     background-color: #b77abf;
 }
 
 /* Enlace de inicio de sesión */
-.register-container a {
+.contenedor-registro a {
     color: #d5a6e0;
     text-decoration: none;
 }
 
-.register-container a:hover {
+.contenedor-registro a:hover {
     text-decoration: underline;
 }
 
 /* Alerta de validación */
-#alertBox {
+#cajaAlerta {
     display: none;
     margin-bottom: 15px;
 }
