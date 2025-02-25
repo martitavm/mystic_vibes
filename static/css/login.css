@@ -1,3 +1,4 @@
+/* Estilo general del body */
 body {
     font-family: 'Quicksand', sans-serif;
     background-color: #2c2c54;
@@ -10,6 +11,7 @@ body {
     height: 100vh;
 }
 
+/* Estilos para el contenedor de inicio de sesión */
 .contenedorInicioSesion {
     background-color: #3b3a63;
     padding: 40px;
@@ -20,11 +22,13 @@ body {
     text-align: center;
 }
 
+/* Título del formulario */
 .contenedorInicioSesion h2 {
     font-family: 'Playfair Display', serif;
     color: #d5a6e0;
 }
 
+/* Estilos de los inputs */
 .form-control {
     background-color: #5f5fa6;
     color: white;
@@ -36,6 +40,7 @@ body {
     box-shadow: none;
 }
 
+/* Botón de inicio de sesión */
 .botonPersonalizado {
     background-color: #d5a6e0;
     color: #fff;
@@ -43,15 +48,18 @@ body {
     padding: 10px 30px;
 }
 
+/* Efecto hover del botón */
 .botonPersonalizado:hover {
     background-color: #b77abf;
 }
 
+/* Estilos de los enlaces */
 a {
     color: #d5a6e0;
     text-decoration: none;
 }
 
+/* Efecto hover en los enlaces */
 a:hover {
     text-decoration: underline;
 }
