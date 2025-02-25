@@ -20,6 +20,9 @@ const productos = {
     }
 };
 
+// Variable global para almacenar el carrito
+let carrito = [];
+
 // Función que cargamos para mostrar los detalles del producto
 function cargarProducto() {
     // Obtenemos el parámetro 'producto' de la URL
@@ -48,13 +51,13 @@ function cargarProducto() {
 }
 
 // Función para aumentar la cantidad del producto
-function increaseQuantity() {
+function incrementarCantidad() {
     let quantity = document.getElementById('quantity');
     quantity.value = parseInt(quantity.value) + 1; // Incrementamos la cantidad
 }
 
 // Función para disminuir la cantidad del producto, asegurándonos de que no sea menor que 1
-function decreaseQuantity() {
+function disminuirCantidad() {
     let quantity = document.getElementById('quantity');
     if (quantity.value > 1) {
         quantity.value = parseInt(quantity.value) - 1; // Decrementamos la cantidad
@@ -62,7 +65,7 @@ function decreaseQuantity() {
 }
 
 // Función para añadir el producto al carrito
-function addToCart() {
+function addToCarrito() {
     // Obtenemos el ID del producto desde la URL
     const urlParams = new URLSearchParams(window.location.search);
     const productoID = urlParams.get('producto');
@@ -71,8 +74,6 @@ function addToCart() {
     // Verificamos si el producto existe en nuestra base de datos
     if (!productoID || !productos[productoID]) return;
 
-    // Obtenemos el carrito actual del almacenamiento local (localStorage)
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     // Buscamos si el producto ya está en el carrito
     let productoEnCarrito = carrito.find(item => item.id === productoID);
 
@@ -84,8 +85,6 @@ function addToCart() {
         carrito.push({ id: productoID, cantidad: quantity });
     }
 
-    // Guardamos el carrito actualizado en el almacenamiento local
-    localStorage.setItem('carrito', JSON.stringify(carrito));
     // Actualizamos el carrito en la interfaz
     actualizarCarrito();
 
@@ -95,8 +94,6 @@ function addToCart() {
 
 // Función para actualizar el contador del carrito
 function actualizarCarrito() {
-    // Obtenemos el carrito desde el almacenamiento local
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     // Calculamos la cantidad total de productos en el carrito
     let totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad, 0);
     // Actualizamos el contador del carrito en la interfaz
