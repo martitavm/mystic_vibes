@@ -31,7 +31,7 @@ const searchInput = document.querySelector('input[type="search"]');
 const productList = document.getElementById('product-list');
 
 // Función que filtra productos según el texto ingresado
-function filterProducts() {
+function filtrarProductos() {
     const searchTerm = searchInput.value.toLowerCase(); // Convertir el texto a minúsculas para comparación
     const products = productList.getElementsByClassName('card'); // Obtener todos los productos
 
@@ -50,5 +50,5 @@ function filterProducts() {
 }
 
 // Añadimos un evento para que el filtro se ejecute al escribir
-searchInput.addEventListener('input', filterProducts);
+searchInput.addEventListener('input', filtrarProductos);
 
